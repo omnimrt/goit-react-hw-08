@@ -1,6 +1,5 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "./contactsOps";
-import { selectNameFilter } from "./filtersSlice";
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchContacts, addContact, deleteContact } from "./operations";
 
 export const INITIAL_STATE = {
   contacts: {
@@ -10,6 +9,15 @@ export const INITIAL_STATE = {
   },
   filters: {
     name: "",
+  },
+  auth: {
+    user: {
+      name: null,
+      email: null,
+    },
+    token: null,
+    isLoggedIn: false,
+    isRefreshing: false,
   },
 };
 
@@ -58,18 +66,6 @@ const contactsSlice = createSlice({
   },
 });
 
-export const selectContacts = (state) => state.contacts.items;
-export const selectIsLoading = (state) => state.contacts.loading;
-export const selectError = (state) => state.contacts.error;
-export const selectFilteredContacts = createSelector(
-  [selectContacts, selectNameFilter],
-  (contacts, filter) => {
-    return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-  }
-);
-
 // export const selectContacts = (state) => state.phonebook.contacts.items;
 // export const selectIsLoading = (state) => state.phonebook.contacts.loading;
 // export const selectError = (state) => state.phonebook.contacts.error;
@@ -83,4 +79,4 @@ export const selectFilteredContacts = createSelector(
 //     )
 // );
 
-export const phonebookReducer = contactsSlice.reducer;
+export const contactsReducer = contactsSlice.reducer;

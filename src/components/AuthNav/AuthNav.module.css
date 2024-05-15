@@ -1,0 +1,23 @@
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  transition: border-color 0.25s;
+}
+
+.link:hover {
+  color: rgb(225, 62, 2);
+}
+.link:focus {
+  color: blue;
+}
+.link:active {
+  color: blue;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}

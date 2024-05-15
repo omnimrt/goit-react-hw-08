@@ -1,0 +1,18 @@
+.link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  transition: border-color 0.25s;
+}
+
+.link:hover {
+  color: rgb(29, 231, 146);
+}
+.link:focus {
+  color: blue;
+}
+.link:active {
+  color: blue;
+}
