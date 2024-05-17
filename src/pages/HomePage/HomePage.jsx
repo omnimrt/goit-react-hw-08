@@ -8,7 +8,10 @@ const HomePage = () => {
         <title>Home Page</title>
       </Helmet>
 
-      <h1>Wanna become my fan? Join me like other people do in Phonebook!</h1>
+      <h1>
+        Users need other users! Socialize by adding new contacts to your
+        phonebook!
+      </h1>
       <p className={css.emoji}>
         🧖‍♂️🧖🏽🧖🏻‍♀️🧖‍♂️🧖🏽🧖🏻‍♀️🧖‍♂️🧖🏽🧖🏻‍♀️🧖‍♂️🧖🏽🧖🏻‍♀️🧖‍♂️🧖🏽🧖🏻‍♀️🧖‍♂️🧖🏽🧖🏻‍♀️🧖‍♂️🧖🏽🧖🏻‍♀️🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️
         🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️ 🧖‍♂️🧖🏽🧖🏻‍♀️
