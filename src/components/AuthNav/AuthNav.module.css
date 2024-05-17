@@ -1,6 +1,6 @@
 .link {
   text-decoration: none;
-  color: black;
+  color: #bdd5d2;
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
@@ -8,16 +8,17 @@
 }
 
 .link:hover {
-  color: rgb(225, 62, 2);
+  color: #527499;
 }
 .link:focus {
-  color: blue;
+  color: #527499;
 }
 .link:active {
-  color: blue;
+  color: #527499;
 }
 
 .nav {
   display: flex;
-  gap: 10px;
+  gap: 25px;
+  margin-right: 20px;
 }

@@ -5,16 +5,17 @@
   font-size: 18px;
   line-height: 24px;
   transition: border-color 0.25s;
+  margin-left: 20px;
 }
 
 .link:hover {
-  color: rgb(29, 231, 146);
+  color: #527499;
 }
 .link:focus {
-  color: blue;
+  color: #527499;
 }
 .link:active {
-  color: blue;
+  color: #527499;
 }
 
 .nav {
