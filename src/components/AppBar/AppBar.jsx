@@ -7,6 +7,12 @@ import css from "./AppBar.module.css";
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  // const navigate = useNavigate();
+
+  // Redirect the user to '/contacts' if logged in
+  // if (isLoggedIn) {
+  //   navigate("/contacts");
+  // }
 
   return (
     <header className={css.header}>

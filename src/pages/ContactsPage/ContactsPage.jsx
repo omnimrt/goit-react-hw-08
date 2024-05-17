@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../../redux/filters/slice";
+import { selectIsLoading } from "../../redux/contacts/selectors";
 import {
   fetchContacts,
   addContact,
@@ -12,6 +13,7 @@ import ContactList from "../../components/ContactList/ContactList";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -27,9 +29,9 @@ const ContactsPage = () => {
     dispatch(addContact(formData));
   };
 
-  const onUserDelete = (id) => {
-    dispatch(deleteContact(id));
-  };
+  // const onUserDelete = (id) => {
+  //   dispatch(deleteContact(id));
+  // };
 
   const onChangeFilter = (event) => {
     dispatch(setFilter(event.target.value));
@@ -40,7 +42,7 @@ const ContactsPage = () => {
       <br />
       <ContactForm onAddUser={onAddUser} />
       <SearchBox onChangeFilter={onChangeFilter} />
-      <ContactList onUserDelete={onUserDelete} />
+      <ContactList />
     </div>
   );
 };

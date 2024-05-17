@@ -1,6 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { apiRegister, apiLogin } from "../auth/operations";
-import { INITIAL_STATE } from "../contacts/slice";
+import {
+  apiRegister,
+  apiLogin,
+  apiRefreshUser,
+  apiLogout,
+} from "../auth/operations";
+
+const INITIAL_STATE_AUTH = {
+  auth: {
+    user: {
+      name: null,
+      email: null,
+    },
+    token: null,
+    isLoggedIn: false,
+    isRefreshing: false,
+  },
+};
 
 const handlePending = (state) => {
   state.loading = true;
@@ -14,7 +30,7 @@ const handleRejected = (state) => {
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: INITIAL_STATE,
+  initialState: INITIAL_STATE_AUTH,
   reducers: {
     // Define additional reducers here if needed
   },
@@ -36,7 +52,19 @@ const authSlice = createSlice({
         state.token = action.payload.token;
         state.user = action.payload.user;
       })
-      .addCase(apiLogin.rejected, handleRejected);
+      .addCase(apiLogin.rejected, handleRejected)
+      .addCase(apiRefreshUser.pending, handlePending)
+      .addCase(apiRefreshUser.fulfilled, (state, action) => {
+        state.loading = false;
+        state.isLoggedIn = true;
+        state.user = action.payload;
+      })
+      .addCase(apiLogout.rejected, handleRejected)
+      .addCase(apiLogout.pending, handlePending)
+      .addCase(apiLogout.fulfilled, () => {
+        return INITIAL_STATE_AUTH;
+      })
+      .addCase(apiRefreshUser.rejected, handleRejected);
   },
 });
 
