@@ -6,16 +6,14 @@ import {
   apiLogout,
 } from "../auth/operations";
 
-const INITIAL_STATE_AUTH = {
-  auth: {
-    user: {
-      name: null,
-      email: null,
-    },
-    token: null,
-    isLoggedIn: false,
-    isRefreshing: false,
+export const INITIAL_STATE_AUTH = {
+  user: {
+    name: null,
+    email: null,
   },
+  token: null,
+  isLoggedIn: false,
+  isRefreshing: false,
 };
 
 const handlePending = (state) => {

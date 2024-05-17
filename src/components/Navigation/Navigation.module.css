@@ -1,7 +1,7 @@
 .link {
   text-decoration: none;
-  color: black;
-  font-weight: 500;
+  color: #bdd5d2;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
   transition: border-color 0.25s;
@@ -15,4 +15,9 @@
 }
 .link:active {
   color: blue;
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
 }

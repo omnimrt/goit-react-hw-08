@@ -3,16 +3,14 @@ import Contact from "../Contact/Contact";
 import css from "./ContactList.module.css";
 import { selectFilteredContacts } from "../../redux/contacts/selectors";
 
-const ContactList = ({ users, onUserDelete }) => {
+const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
   return (
     <div>
       <ul className={css.contactList}>
         {Array.isArray(filteredContacts) &&
-          users.map((user) => {
-            return (
-              <Contact key={user.id} user={user} onUserDelete={onUserDelete} />
-            );
+          filteredContacts.map((user) => {
+            return <Contact key={user.id} user={user} />;
           })}
       </ul>
     </div>

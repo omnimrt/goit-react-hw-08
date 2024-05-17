@@ -1,15 +1,12 @@
-// import { useSelector } from "react-redux";
-// import AuthNav from "../AuthNav/AuthNav";
 import AppBar from "../AppBar/AppBar";
-// import UserMenu from "../UserMenu/UserMenu";
-
+import css from "./Layout.module.css";
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className={css.container}>
       <header>
         <AppBar />
       </header>
-      <main>{children}</main>
+      <main className={css.main}>{children}</main>
     </div>
   );
 };

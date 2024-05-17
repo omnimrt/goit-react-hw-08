@@ -1,6 +1,6 @@
 .contactContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   border: 2px solid black;
   border-radius: 4px;
@@ -9,7 +9,12 @@
   padding: 8px;
   width: 275px;
 }
-
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 .button {
   padding: 8px;
 }
